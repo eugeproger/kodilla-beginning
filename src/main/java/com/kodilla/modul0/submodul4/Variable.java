@@ -1,4 +1,4 @@
-package com.kodilla.zero.four;
+package com.kodilla.modul0.submodul4;
 
 public class Variable {
 
