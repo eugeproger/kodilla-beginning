@@ -1,4 +1,4 @@
-package com.kodilla.modul1.submodul1;
+package com.kodilla.modul1.submodul1.kod;
 
 public class UserValidator {
     public boolean validateAge(int age) {
