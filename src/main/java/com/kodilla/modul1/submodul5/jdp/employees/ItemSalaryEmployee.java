@@ -4,7 +4,7 @@ import com.kodilla.modul1.submodul5.jdp.Employee;
 
 public class ItemSalaryEmployee implements Employee {
 
-    private final double itemPay = 5;
+    private final double ITEM_PAY = 5;
     private double item;
 
     public ItemSalaryEmployee(double item) {
@@ -14,6 +14,6 @@ public class ItemSalaryEmployee implements Employee {
 
     @Override
     public double calculateSalary() {
-        return this.item * this.itemPay;
+        return this.item * this.ITEM_PAY;
     }
 }
