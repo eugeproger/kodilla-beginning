@@ -1,5 +1,7 @@
 package com.kodilla.modul2.submodul1.jdp;
 
+import static sun.util.locale.LocaleUtils.isEmpty;
+
 public class AverageProcessor {
 
     private int[] array;
@@ -9,6 +11,10 @@ public class AverageProcessor {
     }
 
     public double count() {
+        if (isEmpty(array)) {
+            return
+        }
+
         double sum = 0;
         double result;
         for (int i = 0; i < array.length; i++) {

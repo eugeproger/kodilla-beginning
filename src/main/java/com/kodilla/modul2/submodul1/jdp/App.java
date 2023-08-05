@@ -1,14 +1,14 @@
 package com.kodilla.modul2.submodul1.jdp;
 
-import java.util.Random;
-
 public class App {
 
     public static void main(String[] args) {
-        InputData inputData = new InputData();
-        AverageProcessor averageProcessor = new AverageProcessor(inputData.array(20, 20));
-        averageProcessor.printArray();
-        averageProcessor.printAverageResult();
+        Array array = new Array();
+
+        AverageProcessor averageProcessor = new AverageProcessor(array.createRandom(20, 20));
+        AverageProcessor averageProcessor1 = new AverageProcessor(array.createEmpty(20));
+        averageProcessor1.printArray();
+        averageProcessor1.printAverageResult();
 
     }
 }
