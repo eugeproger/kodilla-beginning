@@ -1,7 +1,5 @@
 package com.kodilla.modul2.submodul1.jdp;
 
-import static sun.util.locale.LocaleUtils.isEmpty;
-
 public class AverageProcessor {
 
     private int[] array;
@@ -11,10 +9,6 @@ public class AverageProcessor {
     }
 
     public double count() {
-        if (isEmpty(array)) {
-            return
-        }
-
         double sum = 0;
         double result;
         for (int i = 0; i < array.length; i++) {
@@ -24,13 +18,30 @@ public class AverageProcessor {
         return result;
     }
 
-    public void printArray() {
+    public boolean isEmpty() {
+        boolean isEmpty = false;
+
         for (int i = 0; i < array.length; i++) {
-            System.out.println(i + " element of array is " + array[i]);
+            if (array[i] == 0) {
+                isEmpty = true;
+            }
+        }
+        return isEmpty;
+    }
+
+    public void printArray() {
+        if (!isEmpty()) {
+            for (int i = 0; i < array.length; i++) {
+                System.out.println(i + " element of array is " + array[i]);
+            }
+        } else {
+            System.out.println("Array is empty");
         }
     }
 
     public void printAverageResult() {
-        System.out.println("Average number is " + count());
+        if (!isEmpty()) {
+            System.out.println("Average number is " + count());
+        }
     }
 }
