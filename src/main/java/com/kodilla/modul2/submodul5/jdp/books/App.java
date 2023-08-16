@@ -17,6 +17,6 @@ public class App {
         }
 
         BooksProcessor booksProcessor = new BooksProcessor(books);
-        booksProcessor.showBooks2000YearAndMore();
+        booksProcessor.print(booksProcessor.filterLess(2000));
     }
 }
