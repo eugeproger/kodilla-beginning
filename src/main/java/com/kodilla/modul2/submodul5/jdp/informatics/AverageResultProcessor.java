@@ -64,15 +64,15 @@ public class AverageResultProcessor {
     }
 
     public void countAverage() {
-
-        if (results.size() < 3) {
+        if (this.results.size() < 3) {
             this.average = 0;
         } else {
             double sum = 0;
             for (double result : this.results) {
                 sum += result;
             }
-            this.average = sum / results.size();
+            this.average = sum / this.results.size();
+        }
     }
 
     public void printResults() {
