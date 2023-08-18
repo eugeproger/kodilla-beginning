@@ -6,7 +6,6 @@ public class App {
 
     public static void main(String[] args) {
         Random random = new Random();
-
         Map<Student, List<Integer>> group = new HashMap<>();
         for (int i = 0; group.size() < 20; i++) {
 
@@ -29,25 +28,19 @@ public class App {
         List<Integer> grades1 = new ArrayList<>();
         grades1.add(2);
         grades1.add(3);
+        grades1.add(4);
 
         List<Integer> grades2 = new ArrayList<>();
         grades2.add(4);
         grades2.add(5);
+        grades2.add(6);
 
         group2.put(student1, grades1);
         group2.put(student2, grades2);
 
-        for (Map.Entry<Student, List<Integer>> entry : group.entrySet()) {
-            System.out.print(entry.getKey());
-            for (int grade: entry.getValue()) {
-                System.out.print(" " + grade + " ");
-            }
-            System.out.println(" ");
-        }
-
-
-
-
-
+        AverageProcessor averageProcessor = new AverageProcessor(group);
+        averageProcessor.printAllGrades();
+        averageProcessor.countAverage();
+        averageProcessor.printAverageGrades();
     }
 }
