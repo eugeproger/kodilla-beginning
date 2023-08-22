@@ -30,6 +30,8 @@ public class HashMapTest {
         paymentParameters.put(worker3, params3);
         paymentParameters.put(worker4, params4);
 
+        System.out.println(paymentParameters.get(worker1));
+
         for (Map.Entry<Employee, SalaryParameters> entry: paymentParameters.entrySet()) {
 
             if (entry.getValue().getBaseSalary() >= 5000) {
