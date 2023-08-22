@@ -40,7 +40,10 @@ public class App {
 
         AverageProcessor averageProcessor = new AverageProcessor(group);
         averageProcessor.printAllGrades();
-        averageProcessor.countAverage();
-        averageProcessor.printAverageGrades();
+        averageProcessor.printAverageGrades(averageProcessor.countAverage());
+
+        AverageProcessor averageProcessor2 = new AverageProcessor(group2);
+        averageProcessor2.printAllGrades();
+        averageProcessor2.printAverageGrades(averageProcessor2.countAverage());
     }
 }

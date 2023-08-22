@@ -21,7 +21,7 @@ public class AverageProcessor {
         return averageGrades;
     }
 
-    public void countAverage() {
+    public Map<Student, Double> countAverage() {
         for (Map.Entry<Student, List<Integer>> entry: this.group.entrySet()) {
             Double result = 0.0;
             for (Integer grade : entry.getValue()) {
@@ -30,9 +30,10 @@ public class AverageProcessor {
             result = result / entry.getValue().size();
             this.averageGrades.put(entry.getKey(), result);
         }
+        return this.averageGrades;
     }
 
-    public void printAverageGrades() {
+    public void printAverageGrades(Map<Student, Double> averageGrades) {
         for (Map.Entry<Student, Double> averageGrade: this.averageGrades.entrySet()) {
             System.out.println(averageGrade.getKey() + ": " + averageGrade.getValue());
         }
