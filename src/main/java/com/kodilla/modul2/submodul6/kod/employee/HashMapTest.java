@@ -31,12 +31,16 @@ public class HashMapTest {
         paymentParameters.put(worker4, params4);
 
         System.out.println(paymentParameters.get(worker1));
+        System.out.println(paymentParameters.get(worker3));
+        System.out.println(paymentParameters.get(worker4));
 
         for (Map.Entry<Employee, SalaryParameters> entry: paymentParameters.entrySet()) {
 
             if (entry.getValue().getBaseSalary() >= 5000) {
                 System.out.println("Salary of " + entry.getKey() + " equals " + entry.getValue());
             }
+
+            System.out.println("Salary of " + entry.getKey() + " equals " + entry.getValue());
         }
 
     }
