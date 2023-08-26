@@ -7,25 +7,15 @@ import java.util.Set;
 public class App {
 
     public static void main(String[] args) {
-        Random random = new Random();
-        Set<Book> books = new HashSet<>();
-        for (int i = 0; books.size() < 10; i++) {
-            int titleId = random.nextInt(8999) + 1000;
-            int authorId = random.nextInt(8999) + 1000;
-            int year = random.nextInt(70) + 1950;
-            Book book = new Book("title", titleId, "author", authorId, year);
-            books.add(book);
-        }
+        FictionLibraryCreator fictionLibrary = new FictionLibraryCreator(
+                10,
+                1000, 9999,
+                1000, 9999,
+                2000, 2023
+        );
+        fictionLibrary.createFakeLibrary();
 
-//        FictionLibraryCreator fictionLibrary = new FictionLibraryCreator();
-//        fictionLibrary.createFakeLibrary(
-//                10,
-//                fictionLibrary.createRandomTitleId(1000,9999),
-//                fictionLibrary.createRandomAuthorId(1000, 9999),
-//                fictionLibrary.createRandomYear(1950,2023)
-//        );
-
-        BookProcessor bookProcessor = new BookProcessor(books);
+        BookProcessor bookProcessor = new BookProcessor(fictionLibrary.getBooks());
         bookProcessor.displayHallList();
         bookProcessor.displayBookIssuedBefore(2010);
     }
